@@ -24,7 +24,7 @@ export function getBirdRect() {
 }
 
 function setTop(top) {
-  return parseFloat(getComputedStyle(birdElem).getPropertyValue("--bird-top"));
+  birdElem.style.setProperty("--bird-top", top);
 }
 
 function getTop() {

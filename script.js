@@ -1,6 +1,6 @@
 import { getBirdRect, setupBird, updateBird } from "./bird.js";
 import {
-  getPassedPipescount,
+  getPassedPipesCount,
   getPipeRects,
   setupPipes,
   updatePipes,
@@ -53,7 +53,7 @@ function handleLose() {
   setTimeout(() => {
     title.classList.remove("hide");
     subtitle.classList.remove("hide");
-    subtitle.textContent = `${getPassedPipescount()} pipes`;
+    subtitle.textContent = `${getPassedPipesCount()} Pipes`;
     document.addEventListener("keypress", handleStart, { once: true });
   }, 100);
 }

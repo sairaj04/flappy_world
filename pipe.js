@@ -3,22 +3,22 @@ const PIPE_WIDTH = 120;
 const PIPE_INTERVAL = 1500;
 const PIPE_SPEED = 0.75;
 let pipes = [];
-let timeSinceLastpipe;
+let timeSinceLastPipe;
 let passedPipeCount;
 
 export function setupPipes() {
   document.documentElement.style.setProperty("--pipe-width", PIPE_WIDTH);
   document.documentElement.style.setProperty("--hole-height", HOLE_HEIGHT);
   pipes.forEach((pipe) => pipe.remove());
-  timeSinceLastpipe = PIPE_INTERVAL;
+  timeSinceLastPipe = PIPE_INTERVAL;
   passedPipeCount = 0;
 }
 
 export function updatePipes(delta) {
-  timeSinceLastpipe += delta;
+  timeSinceLastPipe += delta;
 
-  if (timeSinceLastpipe > PIPE_INTERVAL) {
-    timeSinceLastpipe -= PIPE_INTERVAL;
+  if (timeSinceLastPipe > PIPE_INTERVAL) {
+    timeSinceLastPipe -= PIPE_INTERVAL;
     createPipe();
   }
 
@@ -31,7 +31,7 @@ export function updatePipes(delta) {
   });
 }
 
-export function getPassedPipescount() {
+export function getPassedPipesCount() {
   return passedPipeCount;
 }
 
@@ -60,7 +60,7 @@ function createPipe() {
       );
     },
     set left(value) {
-      pipeElem.style.setProperty("--pipe_left", value);
+      pipeElem.style.setProperty("--pipe-left", value);
     },
     remove() {
       pipes = pipes.filter((p) => p !== pipe);
@@ -79,9 +79,9 @@ function createPipe() {
 }
 
 function createPipeSegment(position) {
-  const segement = document.createElement("div");
-  segement.classList.add("segment", position);
-  return segement;
+  const segment = document.createElement("div");
+  segment.classList.add("segment", position);
+  return segment;
 }
 
 function randomNumberBetween(min, max) {
